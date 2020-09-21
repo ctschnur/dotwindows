@@ -24,11 +24,11 @@ which just loads the actual ~init.el~,
 (message "hi from AppData/Roaming")
 (load "c:/Users/nanospin/misc/dotemacs/.emacs.d/init.el")
 ```
-within which you set your ~user-emacs-directory~ to your dotemacs repo's ~.emacs.d/~ folder. 
+within which you set your `user-emacs-directory` to your dotemacs repo's `.emacs.d/` folder. 
 
 ## installing linux compatibility tools
 ### ag
-useful for ~projectile-ag~ and ~helm-ag~ in emacs. 
+useful for `projectile-ag` and `helm-ag` in emacs. 
 Install it using e.g. the windows package manager `chocolatey` (https://chocolatey.org/install#individual) . 
 In a powershell terminal with admin rights, type 
 ```
@@ -38,13 +38,12 @@ Then, in cmd, show the location of ag:
 ```
 where ag
 ```
-Add the path to the *front* of your ~Path~ environment variable. Restart emacs. 
-Now ~helm-ag~ should work. 
-
+Add the path to the *front* of your `PATH` environment variable. Restart emacs. 
+Now `helm-ag` should work. 
 
 ### fzf
-Can be installed e.g. in a separate folder ~C:/Users/nanospin/misc/fzf/~. 
-Emacs will find ~fzf.exe~, if this directory is added to ~exec-path~. 
+Can be installed e.g. in a separate folder `C:/Users/nanospin/misc/fzf/`. 
+Emacs will find `fzf.exe`, if this directory is added to `exec-path`. Setting the `PATH` environment variable will also work, after restarting emacs. 
 
 ### Testing
 - Putting a .emacs in `AppData/Roaming` will load it. -> Checked
@@ -54,22 +53,26 @@ Emacs will find ~fzf.exe~, if this directory is added to ~exec-path~.
 ```
 - printing `(expand-file-name "~")` yields `"c:/Users/nanospin/AppData/Roaming"` 
 
-
-### one proposed option to integrate: 
+### python
+The error `comint-send-string: Process Python Internal[[some-file.py]]` appears when trying to open any python file `some-file.py`. Probably, `python-mode` wants to 
+initialize some things and checks if the command `python` is actually in the `PATH`. If it's not, it throws this error. Usually, I like to install anaconda python on windows 
+and then specify the directory of the `base` environment's `python.exe` 
 ```
-;; Place this file in C:\Users\Username\AppData\Roaming and point to the appropriate files
-(setq user-init-file "C:/path/to/.emacs")
-(setq user-emacs-directory "C:/path/to/.emacs.d/")
-(setq default-directory "C:/whatever/you/want/to/start/in")
-(setenv "HOME" "D:/my/home/directory")
-(load user-init-file)
+C:\Users\nanospin\AppData\Local\Continuum\anaconda3
 ```
-(see https://emacs.stackexchange.com/questions/12881/how-do-i-set-a-different-location-for-the-dot-emacs-emacs-file-on-windows-7/12886#12886)
+in the account's system variable `PATH`. 
 
 # Dealing with conda environments on windows
 Anaconda should install the `Anaconda Prompt`. Inside there, the conda commands
 work out-of-the-box: checking out different environments, installing things, etc..
 
+It is useful to add the conda command to the Path variable. Add all directory paths returned by
+```
+where conda
+```
+(from anaconda prompt)
+
+to the ~Path~ environment variable. 
 
 # shells in windows
 ## git bash
