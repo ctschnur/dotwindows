@@ -26,6 +26,11 @@ which just loads the actual ~init.el~,
 ```
 within which you set your `user-emacs-directory` to your dotemacs repo's `.emacs.d/` folder. 
 
+
+## python autocompletion and jump to definition
+Auto-completion and jump to definition of python code in windows, within a conda virtual environment I did not get to work. 
+TODO: save the commit of the current linux autocompletion setup (+ all versions of involved packages)
+
 ## installing linux compatibility tools
 ### ag
 useful for `projectile-ag` and `helm-ag` in emacs. 
@@ -44,6 +49,9 @@ Now `helm-ag` should work.
 ### fzf
 Can be installed e.g. in a separate folder `C:/Users/nanospin/misc/fzf/`. 
 Emacs will find `fzf.exe`, if this directory is added to `exec-path`. Setting the `PATH` environment variable will also work, after restarting emacs. 
+
+### diff
+Can be installed using the windows package manager `scoop` (packages for people familiar with Unix tools). 
 
 ### Testing
 - Putting a .emacs in `AppData/Roaming` will load it. -> Checked
@@ -90,3 +98,10 @@ Unlike cmd, it has bck-i-search, with ~Ctrl+R~, which is cool.
 When doing data analysis, an anaconda installation can be very useful. It comes with a separate 
 prompt for cmd (Anaconda Prompt; shows you the active conda virtual environment) and with a 
 PowerShell (PS) prompt.
+
+# package managers on windows
+## Scoop
+Install it by running the instructions at https://scoop.sh/ in a windows PowerShell 
+(installation into a local account: don't run PowerShell as Administrator). 
+This should automatically add an entry of scoop's binary folder your `PATH`. 
+
