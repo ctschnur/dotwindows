@@ -11,21 +11,7 @@ git config --global core.autocrlf input
 to convert windows line endings always to linux line endings on commit.
 
 ## emacs
-The init file is first read from the location of the environment variable HOME (https://www.gnu.org/software/emacs/manual/html_node/efaq-w32/Location-of-init-file.html). 
-Check the value of this environment variable using
-```
-echo %HOME%
-```
-If it's not set, you can edit the local account environment variables and check again. 
-
-If %HOME% doesn't exist, emacs looks in the `AppData` directory. There you can put a file ~.emacs~ 
-which just loads the actual ~init.el~, 
-```
-(message "hi from AppData/Roaming")
-(load "c:/Users/nanospin/misc/dotemacs/.emacs.d/init.el")
-```
-within which you set your `user-emacs-directory` to your dotemacs repo's `.emacs.d/` folder. 
-
+Follow the windows section on https://github.com/ctschnur/dotemacs .
 ## installing linux compatibility tools
 ### ag
 useful for `projectile-ag` and `helm-ag` in emacs. 
