@@ -1,3 +1,4 @@
+
 Quick windows configuration / tips
 
 # Programming and data processing
@@ -34,7 +35,7 @@ Emacs will find `fzf.exe`, if this directory is added to `exec-path`. Setting th
 ### Testing
 - Putting a .emacs in `AppData/Roaming` will load it. -> Checked
 - printing `(expand-file-name user-emacs-directory)` in emacs yields
-```
+```ll
 "c:/Users/nanospin/AppData/Roaming/.emacs.d/"
 ```
 - printing `(expand-file-name "~")` yields `"c:/Users/nanospin/AppData/Roaming"` 
@@ -46,7 +47,8 @@ and then specify the directory of the `base` environment's `python.exe`
 ```
 C:\Users\nanospin\AppData\Local\Continuum\anaconda3
 ```
-in the account's system variable `PATH`. 
+in the account's system variable `PATH`. But anaconda python might not be the wisest choice. There is also just plain
+Python for windows. This you can 
 
 # Dealing with conda environments on windows
 Anaconda should install the `Anaconda Prompt`. Inside there, the conda commands
